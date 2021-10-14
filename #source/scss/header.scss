@@ -1,0 +1,168 @@
+//====================================================================================================
+.header {
+	&__wrapper {
+
+	}
+
+	&__body {
+		@include flexbox();
+		justify-content: space-between;
+		align-items: center;
+		//max-width: 1250px;
+		margin-top: 28px;
+		@media (max-width: $md3+px) {
+			margin: 20px 50px 0 50px;
+		}
+	}
+
+	&__column {
+	}
+
+	&__logo {
+	}
+
+	&__up {
+	}
+}
+.menu-header {
+	//width: 100%;
+	height: 100%;
+	@include flexbox();
+	justify-content: center;
+
+	&__icon {
+		display: none;
+		position: relative;
+		top: 5px;
+		//right: 10px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 10;
+		span {
+			@include anim(0.3s, 0s);
+			top: 8px;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				@include scale(0);
+				&:first-child {
+					@include rotate(-45deg);
+					top: 8px;
+				}
+				&:last-child {
+					@include rotate(45deg);
+					bottom: 8px;
+				}
+			}
+		}
+		@media (max-width: $md3+px) {
+			display: block;
+		}
+	}
+
+	&__menu {
+		z-index: 3;
+		@include flexbox();
+		align-items: center;
+		justify-content: center;
+		@media (max-width: $md3+px) {
+			position: fixed;
+			height: 100%;
+			top: 0px;
+			background-color: rgb(247, 217, 162);
+			padding-top: 30px;
+			overflow: auto;
+			@include anim(0.3s, 0s);
+			//left: 0;
+			right: 0;
+			width: 100%;
+			right: -510%;
+			&._active {
+				@include anim(0.3s, 0s);
+				right: 0px;
+			}
+		}
+	}
+
+	&__btn{
+		margin-left: 4.87%;
+		@media (max-width: $md3+px) {
+			display: none !important;
+		}
+	}
+
+	&__list {
+		width: 460px;
+		@include flexbox();
+		justify-content: space-between;
+		@media (max-width: $md2+px) {
+			width: 380px;
+		}
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+			margin-top: 60px;
+			li {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__link {
+		font-family: Poppins;
+		font-size: 16px;
+		line-height: 44px;
+		font-weight: 400;
+		color: #242f51;
+		@media (max-width: $md2+px) {
+			font-size: 14px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 24px;
+		}
+		span {
+			position: relative;
+			display: block;
+			&:after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				width: 0;
+				height: 1px;
+				background-color: #f57f00;
+				bottom: 0;
+				@include anim(0.3s, 0s);
+			}
+		}
+		&:hover {
+			color: #eb8b3d;
+			span:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+		@media (max-width: $md3+px) {
+			text-align: center;
+			
+		}
+	}
+
+	&__link--circle {
+	}
+}
+
+
+//====================================================================================================
+
